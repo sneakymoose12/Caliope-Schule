@@ -1,7 +1,9 @@
-basic.forever(function () {
-    if (input.buttonIsPressed(Button.A)) {
-        basic.showString("Hello World!")
-    } else {
-        basic.showString("drück Knopf A")
+let Timer = 0
+input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
+    Timer = 5
+    for (let index = 0; index < 5; index++) {
+        basic.pause(1000)
+        Timer += 1
+        basic.showString("" + (Timer))
     }
 })
